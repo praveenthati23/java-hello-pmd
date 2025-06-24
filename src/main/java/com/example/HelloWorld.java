@@ -6,10 +6,11 @@ public class HelloWorld {
     }
 
     public static void greet(String name) {
-        // PMD violation: unused variable
-        String unused = "badCode";
-
-        System.out.println("Hello, " + name + "!");
+        if (name == null || name.isEmpty()) {
+            System.out.println("Hello!");
+        } else {
+            System.out.println("Hello, " + name + "!");
+        }
     }
 }
 
